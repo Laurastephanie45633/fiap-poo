@@ -1,104 +1,45 @@
 # FIAPRide
 
-## Sobre o projeto
-
-O FIAPRide é um projeto desenvolvido em Java para praticar os conceitos de Programação Orientada a Objetos (POO). Nesta etapa, foi trabalhada a classe `Tenis`, que representa um tênis do mundo real.
+Projeto desenvolvido em Java para a disciplina de Programação Orientada a Objetos (POO).
 
 ## Classe Tenis
 
-A classe `Tenis` possui três atributos que representam características de um tênis:
+A classe `Tenis` representa um tênis e possui os seguintes atributos:
 
-* `cor`: representa a cor do tênis.
-* `marca`: representa a marca ou material informado para o tênis.
-* `numeração`: representa o tamanho do tênis.
+* `cor`
+* `marca`
+* `numeração`
 
-Um objeto da classe `Tenis` pode representar diferentes tênis, cada um com suas próprias características.
+## Métodos adicionados
 
-## Métodos
+Foram implementados dois métodos para alterar os dados do tênis:
 
-Foram adicionados dois métodos responsáveis por alterar o estado dos objetos da classe `Tenis`.
+### `alterarCor()`
 
-### alterarCor()
+Altera a cor do tênis. A nova cor não pode ser vazia ou nula.
 
-O método `alterarCor(String novaCor)` permite alterar a cor do tênis.
+### `alterarNumeracao()`
 
-Antes de realizar a alteração, é feita uma validação para garantir que a nova cor não seja nula ou vazia.
+Altera a numeração do tênis. A numeração deve ser maior que zero.
 
-Exemplo:
-
-```java
-meuTenis.alterarCor("Azul");
-```
-
-Nesse caso, a cor do objeto é alterada para `Azul`.
-
-### alterarNumeracao()
-
-O método `alterarNumeracao(double novaNumeracao)` permite alterar a numeração do tênis.
-
-A regra de negócio determina que a nova numeração deve ser maior que zero. Caso seja informado um valor inválido, a alteração não é realizada.
-
-Exemplo:
-
-```java
-meuTenis.alterarNumeracao(39);
-```
-
-Nesse caso, a numeração do objeto passa a ser `39`.
-
-## Regras de negócio
-
-Os métodos possuem validações para impedir que o objeto receba valores inconsistentes:
-
-* A cor não pode ser `null` ou vazia.
-* A numeração deve ser maior que zero.
-
-Essas validações são realizadas por meio de estruturas condicionais `if`.
+Os dois métodos possuem validações para evitar valores inválidos.
 
 ## Testes
 
-Os métodos foram testados no arquivo `SistemaPrincipal.java` utilizando valores válidos e inválidos.
+Os métodos foram testados no `SistemaPrincipal.java` com valores válidos e inválidos.
 
-### Valores válidos
+Exemplos:
 
 ```java
 meuTenis.alterarCor("Azul");
 meuTenis.alterarNumeracao(39);
 ```
 
-Os valores foram aceitos e o estado do objeto foi alterado.
-
-### Valores inválidos
+Também foram testados valores inválidos:
 
 ```java
 meuTenis.alterarCor("");
 meuTenis.alterarNumeracao(-10);
 ```
 
-Os valores foram rejeitados pelas regras de negócio e o objeto manteve os valores válidos anteriores.
-
-Após os testes, o resultado foi:
-
-```text
-Meu tênis é: Azul | A marca é: Tecido | A numeração é: 39.0
-```
-
-Isso demonstra que os métodos conseguem alterar o estado do objeto quando recebem valores válidos e impedem alterações quando os valores são inválidos.
-
-## UML
-
-O diagrama de classes foi atualizado para incluir os dois novos métodos da classe `Tenis`:
-
-```text
-+ alterarCor(novaCor: String): void
-+ alterarNumeracao(novaNumeracao: double): void
-```
-
-O arquivo do diagrama está disponível na pasta `com/UML/` no formato `.asta`.
-
-## Tecnologias utilizadas
-
-* Java
-* Programação Orientada a Objetos
-* Astah UML
-* Git e GitHub
+Os valores inválidos não alteraram o estado do objeto.

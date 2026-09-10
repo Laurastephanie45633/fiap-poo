@@ -5,7 +5,13 @@ public class Tenis {
     private String cor;
     private String marca;
     private double numeração;
-
+    
+    // Construtor 
+    public Tenis(String cor, String marca, double numeracao) { 
+    	this.setCor(cor); 
+    	this.setMarca(marca); 
+    	this.setNumeracao(numeracao); }
+    
     // GET da cor
     public String getCor() {
         return this.cor;

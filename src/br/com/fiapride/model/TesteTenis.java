@@ -5,18 +5,10 @@ public class TesteTenis {
     public static void main(String[] args) {
 
         // Criando meu tênis
-        Tenis meuTenis = new Tenis();
-
-        meuTenis.setCor("Branco");
-        meuTenis.setMarca("Tecido");
-        meuTenis.setNumeracao(-10);
+        Tenis meuTenis = new Tenis("Branco", "Tecido", 37);
 
         // Criando o tênis do professor
-        Tenis tenisDoProfessor = new Tenis();
-
-        tenisDoProfessor.setCor("Preto");
-        tenisDoProfessor.setMarca("Tecido");
-        tenisDoProfessor.setNumeracao(40);
+        Tenis tenisDoProfessor = new Tenis("Preto", "Tecido", 40);
 
         // Mostrando os dados usando GETTERS
         System.out.println(

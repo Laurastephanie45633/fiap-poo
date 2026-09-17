@@ -4,14 +4,17 @@ public class Tenis {
 
     private String cor;
     private String marca;
-    private double numeração;
-    
-    // Construtor 
-    public Tenis(String cor, String marca, double numeracao) { 
-    	this.setCor(cor); 
-    	this.setMarca(marca); 
-    	this.setNumeracao(numeracao); }
-    
+    private double numeracao;
+    private Dono proprietario;
+
+    // Construtor
+    public Tenis(String cor, String marca, double numeracao, Dono proprietario) {
+        this.setCor(cor);
+        this.setMarca(marca);
+        this.setNumeracao(numeracao);
+        this.proprietario = proprietario;
+    }
+
     // GET da cor
     public String getCor() {
         return this.cor;
@@ -38,20 +41,24 @@ public class Tenis {
 
     // GET da numeração
     public double getNumeracao() {
-        return this.numeração;
+        return this.numeracao;
     }
 
     // SET da numeração
-    // REGRA ESPECIAL: não aceita numeração menor ou igual a zero
     public void setNumeracao(double novaNumeracao) {
         if (novaNumeracao > 0) {
-            this.numeração = novaNumeracao;
+            this.numeracao = novaNumeracao;
         } else {
             System.out.println("Erro de Segurança: A numeração deve ser maior que zero.");
         }
     }
 
-    // Métodos antigos da atividade
+    // GET do proprietário
+    public Dono getProprietario() {
+        return this.proprietario;
+    }
+
+    // Métodos da atividade
     public void alterarCor(String novaCor) {
         setCor(novaCor);
     }

@@ -4,13 +4,15 @@ public class TesteTenis {
 
     public static void main(String[] args) {
 
-        // Criando meu tênis
-        Tenis meuTenis = new Tenis("Branco", "Tecido", 37);
+        // Criando os proprietários
+        Dono proprietario = new Dono("Laura");
+        Dono professor = new Dono("Professor");
 
-        // Criando o tênis do professor
-        Tenis tenisDoProfessor = new Tenis("Preto", "Tecido", 40);
+        // Criando os tênis
+        Tenis meuTenis = new Tenis("Branco", "Tecido", 37, proprietario);
+        Tenis tenisDoProfessor = new Tenis("Preto", "Tecido", 40, professor);
 
-        // Mostrando os dados usando GETTERS
+        // Exibindo os dados
         System.out.println(
             "Meu tênis é: " + meuTenis.getCor() +
             " | A marca é: " + meuTenis.getMarca() +
@@ -23,7 +25,7 @@ public class TesteTenis {
             " | A numeração é: " + tenisDoProfessor.getNumeracao()
         );
 
-        // Alterações usando SETTERS
+        // Alterando os dados
         meuTenis.setCor("Azul");
         meuTenis.setNumeracao(39);
 
@@ -35,7 +37,7 @@ public class TesteTenis {
             " | A numeração é: " + meuTenis.getNumeracao()
         );
 
-        // TESTANDO A PROTEÇÃO
+        // Testando validação
         System.out.println("\n--- Testando a proteção ---");
 
         System.out.println("Tentando colocar numeração -10...");
@@ -50,6 +52,14 @@ public class TesteTenis {
 
         System.out.println(
             "Cor atual do meu tênis: " + meuTenis.getCor()
+        );
+
+        // Testando a associação
+        System.out.println("\n--- Testando a associação ---");
+
+        System.out.println(
+            "O proprietário do meu tênis é: " +
+            meuTenis.getProprietario().getNome()
         );
     }
 }

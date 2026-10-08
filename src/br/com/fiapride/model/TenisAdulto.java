@@ -13,4 +13,9 @@ public class TenisAdulto extends Tenis {
 	    public boolean isTemCadarco() {
 	        return this.temCadarco;
 	    }
+	    
+	    @Override
+	    public double calcularDesconto(double valor) {
+	        return valor * 0.10;
+	    }
 	}

@@ -66,4 +66,8 @@ public class Tenis {
     public void alterarNumeracao(double novaNumeracao) {
         setNumeracao(novaNumeracao);
     }
+    
+    public double calcularDesconto(double valor) {
+        return 0.0;
+    }
 }

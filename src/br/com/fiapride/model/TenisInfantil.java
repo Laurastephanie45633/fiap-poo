@@ -12,4 +12,9 @@ public class TenisInfantil extends Tenis {
     public boolean isTemVelcro() {
         return this.temVelcro;
     }
+    
+    @Override
+    public double calcularDesconto(double valor) {
+        return valor * 0.15;
+    }
 }

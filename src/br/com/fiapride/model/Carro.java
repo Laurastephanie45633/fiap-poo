@@ -23,4 +23,11 @@ public class Carro extends Veiculo {
         double kmRestante = this.getNivelCombustivel() * 10.0;
         return "Autonomia: " + kmRestante + " km (Consumo de 10 km/l).";
     }
+    
+    // @Override NÃO é opcional aqui!
+    // Se não implementarmos, o Java dá erro de compilação
+    @Override
+    public void exibirTipo() {
+        System.out.println("Sou um Carro");
+    }
 }

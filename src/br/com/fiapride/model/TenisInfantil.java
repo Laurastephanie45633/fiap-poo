@@ -17,4 +17,9 @@ public class TenisInfantil extends Tenis {
     public double calcularDesconto(double valor) {
         return valor * 0.15;
     }
+    
+    @Override
+    public void exibirTipo() {
+        System.out.println("Tipo: Tênis Infantil");
+    }
 }

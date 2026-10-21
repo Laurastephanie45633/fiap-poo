@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class Tenis {
+public abstract class Tenis {
 
     private String cor;
     private String marca;
@@ -70,4 +70,7 @@ public class Tenis {
     public double calcularDesconto(double valor) {
         return 0.0;
     }
+    
+ // Obriga cada tipo de tênis a informar sua categoria.
+    public abstract void exibirTipo();
 }

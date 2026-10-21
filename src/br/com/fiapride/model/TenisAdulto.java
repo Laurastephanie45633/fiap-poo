@@ -18,4 +18,9 @@ public class TenisAdulto extends Tenis {
 	    public double calcularDesconto(double valor) {
 	        return valor * 0.10;
 	    }
+	    
+	    @Override
+	    public void exibirTipo() {
+	        System.out.println("Tipo: Tênis Adulto");
+	    }
 	}

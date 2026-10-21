@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class Veiculo {
+public abstract class Veiculo {
     
     private String placa;
     private String modelo;
@@ -18,6 +18,10 @@ public class Veiculo {
     public String getModelo() {
         return this.modelo;
     }
+    
+    // MÉTODO ABSTRATO (sem corpo)
+    // OBRIGA todas as filhas a implementarem este método!
+    public abstract void exibirTipo();
     
     public void atualizarPlaca(String novaPlaca) {
         System.out.println("🔄 Solicitada atualização de placa no Detran para o veículo " + this.modelo + "...");

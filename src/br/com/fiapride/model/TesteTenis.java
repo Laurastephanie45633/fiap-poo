@@ -12,8 +12,13 @@ public class TesteTenis {
         Dono professor = new Dono("Professor");
 
         // Criando os tênis
-        Tenis meuTenis = new Tenis("Branco", "Tecido", 37, proprietario);
-        Tenis tenisDoProfessor = new Tenis("Preto", "Tecido", 40, professor);
+        Tenis meuTenis = new TenisAdulto("Branco", "Tecido", 37, proprietario, true);
+        Tenis tenisDoProfessor = new TenisAdulto("Preto", "Tecido", 40, professor, true);
+        
+     // Testando o novo método abstrato (aula 8)
+        System.out.println("Identificação dos tênis:");
+        meuTenis.exibirTipo();
+        tenisDoProfessor.exibirTipo();
 
         // Exibindo os dados
         System.out.println(
@@ -112,6 +117,9 @@ public class TesteTenis {
         double valorTenis = 200.00;
 
         for (Tenis tenis : listaTenis) {
+        	
+        	System.out.println("\nIdentificação do tênis:");
+        	tenis.exibirTipo();
 
             double desconto = tenis.calcularDesconto(valorTenis);
             double valorFinal = valorTenis - desconto;

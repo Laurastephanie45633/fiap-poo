@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class TenisInfantil extends Tenis {
+public class TenisInfantil extends Tenis implements Vendavel {
 
     private boolean temVelcro;
 
@@ -22,4 +22,16 @@ public class TenisInfantil extends Tenis {
     public void exibirTipo() {
         System.out.println("Tipo: Tênis Infantil");
     }
+
+	// Interface para objetos DIFERENTES
+	@Override
+	public void vender(int preco) {
+		if (preco < Vendavel.PRECO_MINIMO || preco > Vendavel.PRECO_MAXIMO) {
+            System.out.println("Erro: Preco inválido!");
+            return;
+        }
+        
+        System.out.println("Tenis Infantil: " + this.getMarca() + " vender por " + preco + "$");			
+	}
+
 }

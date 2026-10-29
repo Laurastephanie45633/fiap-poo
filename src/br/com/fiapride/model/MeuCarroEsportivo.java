@@ -1,0 +1,44 @@
+package br.com.fiapride.model;
+
+public class MeuCarroEsportivo extends MeuCarro implements Vendavel {
+
+    private int potenciaTurbo;
+
+    public MeuCarroEsportivo(String cor,String marca,int ano,Motor motor,int potenciaTurbo) {
+        super(cor, marca, ano, motor);
+        this.potenciaTurbo = potenciaTurbo;
+    }
+
+    public int getPotenciaTurbo() {
+        return this.potenciaTurbo;
+    }
+
+    @Override
+    public void acelerar(int valor) {
+        if (valor <= 0) {
+            System.out.println("Erro: o valor da aceleração deve ser maior que zero.");
+            return;
+        }
+        int aceleracaoTurbo = this.potenciaTurbo / 10;
+        int aceleracaoTotal = valor + aceleracaoTurbo;
+        System.out.println("Turbo ativado! Aceleração extra: " + aceleracaoTurbo + " km/h.");
+        super.acelerar(aceleracaoTotal);
+    }
+    
+    @Override
+    public String tipoDeCarro() {
+        return "Carro esportivo";
+    }
+
+    // Interface para objetos DIFERENTES
+	@Override
+	public void vender(int preco) {
+		if (preco < Vendavel.PRECO_MINIMO || preco > Vendavel.PRECO_MAXIMO) {
+            System.out.println("Erro: Preco inválido!");
+            return;
+        }
+        
+        System.out.println("Carro Esportivo: " + this.getMarca() + " vender por " + preco + "$");			
+	}
+
+}

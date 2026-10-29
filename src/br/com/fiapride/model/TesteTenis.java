@@ -133,5 +133,45 @@ public class TesteTenis {
             System.out.println("Valor final: R$ " + valorFinal);
 
         }
+        
+        System.out.println("=== FIAPRIDE: Teste da Interface Vendavel ===");
+        System.out.println();
+     // Criando os objetos
+        Motor motor = new Motor("TES-9999", 3);
+        Dono dono = new Dono("Maria");
+
+        MeuCarroEletrico carro = new MeuCarroEletrico(
+            "Branco", "Tesla", 2025, motor, 450
+        );
+
+        TenisAdulto tenis = new TenisAdulto(
+            "Preto", "Nike", 42, dono, true
+        );
+
+        // Polimorfismo: um carro e um tênis
+        Vendavel[] produtos = {
+            carro,
+            tenis
+        };
+
+        System.out.println("=== Realizando as Vendas ===");
+
+        produtos[0].vender(200000);
+        produtos[1].vender(500);
+
+        System.out.println();
+
+        System.out.println("=== Testando Preço Inválido ===");
+
+        produtos[0].vender(50);
+
+        System.out.println();
+
+        System.out.println("=== Testando Polimorfismo ===");
+
+        for (Vendavel produto : produtos) {
+            produto.vender(1000);
+        }
+
     }
 }

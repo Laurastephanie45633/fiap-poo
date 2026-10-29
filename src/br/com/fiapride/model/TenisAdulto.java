@@ -1,7 +1,7 @@
 package br.com.fiapride.model;
 
 // A palavra 'extends' faz a mágica da herança acontecer!
-public class TenisAdulto extends Tenis {
+public class TenisAdulto extends Tenis implements Vendavel {
 
 	    private boolean temCadarco;
 
@@ -23,4 +23,15 @@ public class TenisAdulto extends Tenis {
 	    public void exibirTipo() {
 	        System.out.println("Tipo: Tênis Adulto");
 	    }
-	}
+
+		// Interface para objetos DIFERENTES
+		@Override
+		public void vender(int preco) {
+			if (preco < Vendavel.PRECO_MINIMO || preco > Vendavel.PRECO_MAXIMO) {
+	            System.out.println("Erro: Preco inválido!");
+	            return;
+	        }
+	        
+	        System.out.println("Tenis Adulto " + this.getMarca() + " vender por " + preco + "$");			
+		}
+}
